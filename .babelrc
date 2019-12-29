@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "JSXCAD.createElement",
+        "pragmaFrag": "JSXCAD.Fragment"
+      }
+    ],
+    "@babel/plugin-transform-modules-commonjs",
+    "add-module-exports"
+  ]
+}
