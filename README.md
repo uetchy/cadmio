@@ -33,7 +33,7 @@ Add `.babelrc` for compiling JSX syntax.
 }
 ```
 
-Write your 3D model and save it as `logo.js`.
+Write your 3D model and save it as `logo.jsx`.
 
 ```jsx
 import JSXCAD, { Union, Difference, Intersection, Cube, Sphere } from "jsxcad";
@@ -56,9 +56,9 @@ const OpenJSCADLogo = (
 export default JSXCAD.render(OpenJSCADLogo);
 ```
 
-Compile `logo.js` with babel and save it as `logo.jscad`, then pass it to `openjscad` to generate .stl model.
+Compile `logo.jsx` with babel and save it as `logo.jscad`, then pass it to `openjscad` to generate .stl model.
 
 ```shell
-node_modules/.bin/babel logo.js > logo.jscad
+node_modules/.bin/babel logo.jsx > logo.jscad
 node_modules/.bin/openjscad logo.jscad
 ```
