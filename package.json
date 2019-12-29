@@ -4,15 +4,13 @@
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
   "scripts": {
     "build": "shx rm -rf lib && babel -d lib src",
-    "dev": "babel -d lib src -w"
+    "dev": "babel -d lib src -w",
+    "test": "echo TODO: add test"
   },
   "dependencies": {
     "@jscad/csg": "^0.7.0",
     "debug": "^4.1.1"
   },
-  "files": [
-    "lib/**/*.js"
-  ],
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",
@@ -23,5 +21,8 @@
     "shx": "^0.3.2"
   },
   "main": "lib/jsxcad.js",
+  "files": [
+    "lib/**/*.js"
+  ],
   "license": "Apache-2.0"
 }
