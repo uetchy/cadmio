@@ -1,6 +1,6 @@
 # JSXCAD
 
-> **Users beware:** JSXCAD has been heavily under the development stage. Many APIs are missing and no tooling provided. Please do not attempt to deploy it on your production environment unless you are fully aware of what it means.
+> **Users beware:** JSXCAD is under the development stage. Many APIs are missing and no tooling provided. Please do not attempt to deploy it on your production environment unless you are fully aware of what it means.
 
 JSXCAD provides JSX syntax for [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
 
