@@ -5,7 +5,7 @@
   "scripts": {
     "build": "shx rm -rf lib && babel -d lib src",
     "dev": "babel -d lib src -w",
-    "test": "echo TODO: add test"
+    "test": "jest"
   },
   "dependencies": {
     "@jscad/csg": "^0.7.0",
@@ -18,7 +18,9 @@
     "@babel/plugin-transform-react-jsx": "^7.7.7",
     "@jscad/cli": "^1.10.0",
     "babel-plugin-add-module-exports": "^1.0.2",
-    "shx": "^0.3.2"
+    "jest": "^24.9.0",
+    "shx": "^0.3.2",
+    "temp-dir": "^2.0.0"
   },
   "main": "lib/jsxcad.js",
   "files": [
