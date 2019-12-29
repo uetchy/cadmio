@@ -1,10 +1,10 @@
-# JSXCAD
-
-![Screenshot](./.github/screenshot.png)
+![Logo](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/banner.png)
 
 JSXCAD provides JSX syntax for [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
 
 > **Users beware:** JSXCAD is under the alpha stage. Many APIs are missing and no tooling provided. Please do not attempt to deploy it on your production environment unless you are fully aware of what it means.
+
+![Screenshot](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/screenshot.png)
 
 ## Install
 
