@@ -3,22 +3,23 @@
   "version": "0.1.0",
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
   "scripts": {
-    "build": "shx rm -rf lib && babel -d lib src",
-    "dev": "babel -d lib src -w",
-    "test": "jest"
+    "build": "shx rm -rf lib && babel --presets jsxcad -d lib src && shx chmod +x lib/cli.js",
+    "dev": "babel --presets jsxcad -d lib src -w",
+    "test": "jest",
+    "test-build": "npm run build && DEBUG=jsxcad lib/cli.js tests/__fixtures__/logo.jsx -o test.stl"
   },
   "dependencies": {
+    "@babel/core": "^7.7.7",
+    "@jscad/core": "^0.4.0",
     "@jscad/csg": "^0.7.0",
-    "debug": "^4.1.1"
+    "babel-preset-jsxcad": "^0.1.0",
+    "chalk": "^3.0.0",
+    "debug": "^4.1.1",
+    "vm": "^0.1.0",
+    "yargs": "^15.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
-    "@babel/plugin-transform-modules-commonjs": "^7.7.5",
-    "@babel/plugin-transform-react-jsx": "^7.7.7",
-    "@jscad/cli": "^1.10.0",
-    "babel-plugin-add-module-exports": "^1.0.2",
-    "babel-preset-jsxcad": "^0.1.0",
     "jest": "^24.9.0",
     "shx": "^0.3.2",
     "temp-dir": "^2.0.0"
@@ -27,5 +28,6 @@
   "files": [
     "lib/**/*.js"
   ],
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "bin": "lib/cli.js"
 }
