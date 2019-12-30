@@ -1,10 +1,4 @@
-import JSXCAD, {
-  Union,
-  Difference,
-  Intersection,
-  Cube,
-  Sphere
-} from "../jsxcad";
+import JSXCAD, { Union, Difference, Intersection, Cube, Sphere } from "jsxcad";
 
 const OpenJSCADLogo = (
   <>

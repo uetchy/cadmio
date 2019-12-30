@@ -1,0 +1,20 @@
+{
+  "name": "jsxcad-example",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "babel logo.jsx > logo.jscad && openjscad logo.jscad",
+    "clean": "shx rm *.stl *.jscad"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@jscad/cli": "^1.10.0",
+    "babel-preset-jsxcad": "^0.7.0",
+    "jsxcad": "^0.1.0"
+  },
+  "devDependencies": {
+    "shx": "^0.3.2"
+  },
+  "main": "lib/jsxcad.js",
+  "license": "Apache-2.0"
+}
