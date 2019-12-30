@@ -1,6 +1,6 @@
 {
   "name": "jsxcad",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
   "scripts": {
     "build": "shx rm -rf lib && babel --presets jsxcad -d lib src && shx chmod +x lib/cli.js",
