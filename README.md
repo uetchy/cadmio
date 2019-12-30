@@ -1,10 +1,10 @@
 ![Logo](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/banner.png)
 
-## JSXCAD
+# JSXCAD
 
 JSXCAD is a new way of "writing" 3DCAD like a code. It offers familiar JSX syntax that is transpiling into [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
 
-![Conversion](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/conversion.png)
+![Workflow](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/workflow.png)
 
 > **Users beware:** JSXCAD is under the alpha stage. Many APIs are missing. Please do not attempt to deploy it on your production environment unless you are fully aware of what it means.
 
@@ -48,3 +48,9 @@ jsxcad -f stl -o ./logo.stl ./logo.jsx
 ```
 
 Now you got `logo.stl`!
+
+## Contributing
+
+PRs welcome!
+
+![Logo](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/logo.png)
