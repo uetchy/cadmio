@@ -2,7 +2,7 @@
 
 ## JSXCAD
 
-JSXCAD is a new way of "writing" 3DCAD like a code. It offers familiar JSX format that is transpiled into [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
+JSXCAD is a new way of "writing" 3DCAD like a code. It offers familiar JSX syntax that is transpiling into [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
 
 ![Conversion](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/conversion.png)
 
