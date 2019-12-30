@@ -2,7 +2,7 @@
 
 ## JSXCAD
 
-JSXCAD provides JSX syntax for [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
+JSXCAD is a new way of "writing" 3DCAD like a code. It offers familiar JSX format that is transpiled into [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
 
 > **Users beware:** JSXCAD is under the alpha stage. Many APIs are missing and no tooling provided. Please do not attempt to deploy it on your production environment unless you are fully aware of what it means.
 
@@ -11,27 +11,11 @@ JSXCAD provides JSX syntax for [OpenJSCAD](https://github.com/jscad/OpenJSCAD.or
 Install `jsxcad` via npm.
 
 ```shell
-npm install jsxcad @jscad/cli
-npm install -D @babel/core @babel/cli @babel/plugin-transform-react-jsx babel-plugin-add-module-exports @babel/plugin-transform-modules-commonjs
+npm install -g jsxcad babel-preset-jsxcad
+npm install -g @jscad/cli @babel/core @babel/cli
 ```
 
-Add `.babelrc` for compiling JSX syntax.
-
-```json
-{
-  "plugins": [
-    [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "pragma": "JSXCAD.createElement",
-        "pragmaFrag": "JSXCAD.Fragment"
-      }
-    ],
-    "@babel/plugin-transform-modules-commonjs",
-    "add-module-exports"
-  ]
-}
-```
+## Usage
 
 Write your 3D model and save it as `logo.jsx`.
 
@@ -56,11 +40,24 @@ const OpenJSCADLogo = (
 export default JSXCAD.render(OpenJSCADLogo);
 ```
 
-Compile `logo.jsx` with babel and save it as `logo.jscad`, then pass it to `openjscad` to generate .stl model.
+Compile `logo.jsx` with babel and save it as `logo.jscad`.
 
 ```shell
-node_modules/.bin/babel logo.jsx > logo.jscad
-node_modules/.bin/openjscad logo.jscad
+babel --presets jsxcad logo.jsx > logo.jscad
+```
+
+You can also create `.babelrc` file to specify presets:
+
+```json
+{
+  "presets": ["jsxcad"]
+}
+```
+
+Then pass compiled `logo.jscad` to `openjscad` to generate .stl model.
+
+```shell
+openjscad logo.jscad
 ```
 
 ![Screenshot 2](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/conversion.png)

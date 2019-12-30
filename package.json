@@ -18,6 +18,7 @@
     "@babel/plugin-transform-react-jsx": "^7.7.7",
     "@jscad/cli": "^1.10.0",
     "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-preset-jsxcad": "^0.1.0",
     "jest": "^24.9.0",
     "shx": "^0.3.2",
     "temp-dir": "^2.0.0"

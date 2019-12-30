@@ -807,6 +807,16 @@ babel-preset-jest@^24.9.0:
     "@babel/plugin-syntax-object-rest-spread" "^7.0.0"
     babel-plugin-jest-hoist "^24.9.0"
 
+babel-preset-jsxcad@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-jsxcad/-/babel-preset-jsxcad-0.1.0.tgz#cc96fbb306a2d09126aabf6925fc43d6e9a930ab"
+  integrity sha512-quZJD1O8XX7pHo8ur6EQHjzgnumEAn7AhUbpiTRA55Ote2UVNP+Ki+NAwpoAyahbbmbN4PCaWzr4v9K3Vr8EKA==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-transform-modules-commonjs" "^7.7.5"
+    "@babel/plugin-transform-react-jsx" "^7.7.7"
+    babel-plugin-add-module-exports "^1.0.2"
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
