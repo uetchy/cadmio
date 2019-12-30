@@ -4,11 +4,9 @@
 
 JSXCAD is a new way of "writing" 3DCAD like a code. It offers familiar JSX syntax that is transpiling into [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
 
-![Workflow](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/workflow.png)
-
 > **Users beware:** JSXCAD is under the alpha stage. Many APIs are missing. Please do not attempt to deploy it on your production environment unless you are fully aware of what it means.
 
-## Install
+## 📦 Install
 
 Install `jsxcad` via npm.
 
@@ -16,7 +14,9 @@ Install `jsxcad` via npm.
 npm install -g jsxcad
 ```
 
-## Usage
+## 🚀 How to Use
+
+![Workflow](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/workflow.png)
 
 Write your 3D model and save it as `logo.jsx`.
 
@@ -53,4 +53,6 @@ Now you got `logo.stl`!
 
 PRs welcome!
 
-![Logo](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/logo.png)
+<p align="center">
+<img src="https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/logo.png" width="200" />
+</p>
