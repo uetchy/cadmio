@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@babel/core": "^7.7.7",
+    "@babel/helper-plugin-utils": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.8.3",
     "@jscad/core": "^0.4.0",
     "@jscad/csg": "^0.7.0",
-    "babel-preset-cadmio": "^0.1.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
     "chalk": "^3.0.0",
     "debug": "^4.1.1",
     "vm": "^0.1.0",
