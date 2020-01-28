@@ -5,7 +5,7 @@ import vm from 'vm';
 import path from 'path';
 import Module from 'module';
 import * as babel from '@babel/core';
-import babelPresetJsxcad from 'babel-preset-jsxcad';
+import babelPresetJsxcad from 'babel-preset-cadmio';
 import {prepareOutput} from '@jscad/core/io/prepareOutput';
 import {convertToBlob} from '@jscad/core/io/convertToBlob';
 import yargs from 'yargs';
@@ -41,23 +41,23 @@ function compileModule(modulePath) {
   }).code;
   log('transpiled code', transpiledCode);
 
-  const jsxcadModule = vm.runInThisContext(transpiledCode, {
+  const cadmioModule = vm.runInThisContext(transpiledCode, {
     filename: global.__filename,
   });
-  log('main', jsxcadModule.main());
-  log('getParameterDefinitions', jsxcadModule.getParameterDefinitions().length);
+  // log('main', cadmioModule.main());
+  // log('getParameterDefinitions', cadmioModule.getParameterDefinitions().length);
 
-  return jsxcadModule;
+  return cadmioModule;
 }
 
 async function convert(inputFile, outputFile, format) {
-  const jsxcadModule = compileModule(inputFile);
-  const solidData = convertToBlob(prepareOutput(jsxcadModule.main(), {format}));
+  const cadmioModule = compileModule(inputFile);
+  const solidData = convertToBlob(prepareOutput(cadmioModule.main(), {format}));
   fs.writeFileSync(outputFile, solidData.asBuffer());
 }
 
 const argv = yargs
-  .scriptName('jsxcad')
+  .scriptName('cadmio')
   .usage('Usage: $0 [options] <input>')
   .option('format', {
     alias: 'f',

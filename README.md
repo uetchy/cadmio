@@ -1,27 +1,27 @@
-![Logo](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/banner.png)
+![Logo](https://raw.githubusercontent.com/uetchy/cadmio/master/.github/banner.png)
 
-# JSXCAD
+# Cadmio
 
-JSXCAD is a new way of "writing" a 3D model. It offers familiar JSX syntax that is transpiling into [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
+Cadmio is a new way of "writing" a 3D model. It offers familiar JSX syntax that is transpiling into [OpenJSCAD](https://github.com/jscad/OpenJSCAD.org).
 
-> **Users beware:** JSXCAD is under the alpha stage. Many APIs are missing. Please do not attempt to deploy it on your production environment unless you are fully aware of what it means.
+> **Users beware:** Cadmio is under the alpha stage. Many APIs are missing. Please do not attempt to deploy it on your production environment unless you are fully aware of what it means.
 
 ## 📦 Install
 
-Install `jsxcad` via npm.
+Install `cadmio` via npm.
 
 ```shell
-npm install -g jsxcad
+npm install -g cadmio
 ```
 
 ## 🚀 How to Use
 
-![Workflow](https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/workflow.png)
+![Workflow](https://raw.githubusercontent.com/uetchy/cadmio/master/.github/workflow.png)
 
 Write your 3D model and save it as `logo.jsx`.
 
 ```jsx
-import JSXCAD, {Union, Difference, Intersection, Cube, Sphere} from 'jsxcad';
+import Cadmio, {Union, Difference, Intersection, Cube, Sphere} from 'cadmio';
 
 const OpenJSCADLogo = (
   <>
@@ -38,13 +38,13 @@ const OpenJSCADLogo = (
   </>
 );
 
-export default JSXCAD.render(OpenJSCADLogo);
+export default Cadmio.render(OpenJSCADLogo);
 ```
 
-Compile `logo.jsx` with `jsxcad` command.
+Compile `logo.jsx` with `cadmio` command.
 
 ```shell
-jsxcad -f stl -o ./logo.stl ./logo.jsx
+cadmio -f stl -o ./logo.stl ./logo.jsx
 ```
 
 Now you got `logo.stl`!
@@ -54,5 +54,5 @@ Now you got `logo.stl`!
 PRs welcome!
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/uetchy/jsxcad/master/.github/logo.png" width="200" />
+<img src="https://raw.githubusercontent.com/uetchy/cadmio/master/.github/logo.png" width="200" />
 </p>

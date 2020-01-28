@@ -1,8 +1,8 @@
-import JSXCAD from '../src/jsxcad';
+import Cadmio from '../src/cadmio';
 import path from 'path';
 import fs from 'fs';
 
 it('has JSX properties', () => {
-  expect(JSXCAD.Fragment).toBeDefined();
-  expect(JSXCAD.createElement).toBeDefined();
+  expect(Cadmio.Fragment).toBeDefined();
+  expect(Cadmio.createElement).toBeDefined();
 });

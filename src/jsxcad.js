@@ -35,85 +35,131 @@ const {
   chain_hull,
 } = CSG.transformations;
 
-export function LinearExtrude({props, csgObject}) {
-  return linear_extrude(props, csgObject);
-}
+// export function LinearExtrude({props, csgObject}) {
+//   return linear_extrude(props, csgObject);
+// }
 
-export function Translate({props, csgObject}) {
-  return translate(props, csgObject);
-}
+// export function Translate({props, csgObject}) {
+//   return translate(props, csgObject);
+// }
 
-export function Union({csgObject}) {
-  return union(csgObject);
-}
+// export function Union({csgObject}) {
+//   return union(csgObject);
+// }
 
-export function Difference({csgObject}) {
-  return difference(csgObject);
-}
+// export function Difference({csgObject}) {
+//   return difference(csgObject);
+// }
+
+// export function Color({props, csgObject}) {
+//   return color(props.rgb, csgObject);
+// }
+
+// export function Cylinder({props}) {
+//   return cylinder(props);
+// }
+
+// export function Sphere({props}) {
+//   return sphere(props);
+// }
+
+// export function GeodesicSphere({props}) {
+//   return geodesicSphere(props);
+// }
+
+// export function Square({props}) {
+//   return square(props);
+// }
+
+// export function Circle({props}) {
+//   return circle(props);
+// }
 
 export function Intersection({csgObject}) {
-  return intersection(csgObject);
+  return () => intersection(csgObject);
+}
+// -> createElement(Intersection, null, createElement(Cube, {"size":3}))
+//                     |-> polygon[]                   |-> polygon[]
+
+export function Cube(props) {
+  log('Cube', props);
+  return () => cube(props);
 }
 
-export function Color({props, csgObject}) {
-  return color(props.rgb, csgObject);
+function Func(props) {
+  return createElement(Cube, props);
 }
 
-export function Cylinder({props}) {
-  return cylinder(props);
-}
+/**
+ * fn: Functional component (props) => fnOrElement
+ * element: Object {csgGenFn, props}
+ */
+function Cadmio() {
+  function isCSG(obj) {
+    return obj.hasOwnProperty('polygons');
+  }
 
-export function Sphere({props}) {
-  return sphere(props);
-}
+  function hasCSGRender(v) {
+    return typeof v === 'function' && 'csgRender' in v.__proto__;
+  }
 
-export function GeodesicSphere({props}) {
-  return geodesicSphere(props);
-}
+  function isClass(v) {
+    return typeof v === 'function' && 'render' in v.__proto__;
+  }
 
-export function Cube({props}) {
-  return cube(props);
-}
-
-export function Square({props}) {
-  return square(props);
-}
-
-export function Circle({props}) {
-  return circle(props);
-}
-
-function JSXCAD() {
+  // convert functions into csg polygon object by invoking csgRender
   function render(element) {
-    const {operatorFn, props} = element;
-    log('render', operatorFn, props);
+    log(`render ${element.csgRender}`);
 
+    const {csgRender, props} = element;
+
+    // Aggregate children props and apply render method
     const childElements = props.children || [];
     const renderedChildren = childElements.map((childElement) => {
-      return render(childElement);
+      return render(childElement, props);
     });
 
-    const {children: _, ...operatorProps} = props;
-    return operatorFn({csgObject: renderedChildren, props: operatorProps});
+    log('rendered', renderedChildren, csgRender);
+
+    // Generate and return CSG
+    const {children: _, ...propsWithoutChildren} = props;
+    return csgRender({
+      csgObject: renderedChildren,
+      props: propsWithoutChildren,
+    });
   }
 
-  function createElement(operatorFn, config, ...args) {
-    const props = Object.assign({}, config);
+  function createElement(fn, props = {}, ...args) {
+    log(`createElement ${fn}`);
     const hasChildren = args.length > 0;
     const rawChildren = hasChildren ? [].concat(...args) : [];
-    props.children = rawChildren.filter((c) => c != null && c !== false);
-    return {operatorFn, props};
+
+    // const props = Object.assign({}, config);
+    const children = rawChildren
+      .filter((c) => c != null && c !== false)
+      .map((child) => createElement(child, props));
+
+    const csgFn = fn({...props});
+
+    return {csgFn, props, children};
   }
 
-  function Fragment({props, csgObject}) {
-    return {main: (params) => csgObject, getParameterDefinitions: () => []};
+  function finalize(fn, definitions = []) {
+    log('finalize', fn);
+    return {
+      main: (props) => render(createElement(fn, props)),
+      getParameterDefinitions: () => definitions,
+    };
   }
+
+  function Fragment() {}
 
   return {
-    render,
     createElement,
+    render,
+    finalize,
     Fragment,
   };
 }
 
-export default JSXCAD();
+export default Cadmio();

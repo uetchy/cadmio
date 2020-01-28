@@ -1,7 +1,7 @@
 import debugUtil from 'debug';
 import chalk from 'chalk';
 
-const debug = debugUtil('jsxcad');
+const debug = debugUtil('cadmio');
 
 export function log(...obj) {
   debug(...obj);

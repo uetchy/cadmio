@@ -1,4 +1,4 @@
-# JSXCAD Examples
+# Cadmio Examples
 
 ```shell
 npm install

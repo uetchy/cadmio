@@ -1,18 +1,18 @@
 {
-  "name": "jsxcad",
+  "name": "cadmio",
   "version": "0.2.0",
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
   "scripts": {
-    "build": "shx rm -rf lib && babel --presets jsxcad -d lib src && shx chmod +x lib/cli.js",
-    "dev": "babel --presets jsxcad -d lib src -w",
+    "build": "shx rm -rf lib && babel --presets cadmio -d lib -s true src && shx chmod +x lib/cli.js",
+    "dev": "babel --presets cadmio -d lib src -w",
     "test": "jest",
-    "test-build": "npm run build && DEBUG=jsxcad lib/cli.js tests/__fixtures__/logo.jsx -o test.stl"
+    "test-build": "npm run build && DEBUG=cadmio lib/cli.js tests/__fixtures__/logo.jsx -o test.stl"
   },
   "dependencies": {
     "@babel/core": "^7.7.7",
     "@jscad/core": "^0.4.0",
     "@jscad/csg": "^0.7.0",
-    "babel-preset-jsxcad": "^0.1.0",
+    "babel-preset-cadmio": "^0.1.0",
     "chalk": "^3.0.0",
     "debug": "^4.1.1",
     "vm": "^0.1.0",
@@ -24,7 +24,7 @@
     "shx": "^0.3.2",
     "temp-dir": "^2.0.0"
   },
-  "main": "lib/jsxcad.js",
+  "main": "lib/cadmio.js",
   "files": [
     "lib/**/*.js"
   ],

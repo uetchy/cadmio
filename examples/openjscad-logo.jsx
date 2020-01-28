@@ -1,4 +1,4 @@
-import JSXCAD, { Union, Difference, Intersection, Cube, Sphere } from "jsxcad";
+import Cadmio, {Union, Difference, Intersection, Cube, Sphere} from 'cadmio';
 
 const OpenJSCADLogo = (
   <>
@@ -15,4 +15,4 @@ const OpenJSCADLogo = (
   </>
 );
 
-export default JSXCAD.render(OpenJSCADLogo);
+export default Cadmio.render(OpenJSCADLogo);
