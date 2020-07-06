@@ -6,13 +6,13 @@ import path from 'path';
 import yargs from 'yargs';
 import Module from 'module';
 import * as babel from '@babel/core';
-import {declare} from '@babel/helper-plugin-utils';
+import { declare } from '@babel/helper-plugin-utils';
 import transformReactJSX from '@babel/plugin-transform-react-jsx';
 import transformModulesCommonJS from '@babel/plugin-transform-modules-commonjs';
 import addModuleExports from 'babel-plugin-add-module-exports';
-import {prepareOutput} from '@jscad/core/io/prepareOutput';
-import {convertToBlob} from '@jscad/core/io/convertToBlob';
-import {log} from './util';
+import { prepareOutput } from '@jscad/core/io/prepareOutput';
+import { convertToBlob } from '@jscad/core/io/convertToBlob';
+import { log } from './util';
 
 const babelPresetCadmio = declare((api, opts) => {
   api.assertVersion(7);
@@ -20,11 +20,11 @@ const babelPresetCadmio = declare((api, opts) => {
   const pragma = opts.pragma || 'Cadmio.createElement';
   const pragmaFrag = opts.pragmaFrag || 'Cadmio.Fragment';
   const useBuiltIns = !!opts.useBuiltIns;
-  const {useSpread} = opts;
+  const { useSpread } = opts;
 
   return {
     plugins: [
-      [transformReactJSX, {pragma, pragmaFrag, useBuiltIns, useSpread}],
+      [transformReactJSX, { pragma, pragmaFrag, useBuiltIns, useSpread }],
       transformModulesCommonJS,
       addModuleExports,
     ].filter(Boolean),
@@ -72,7 +72,9 @@ function compileModule(modulePath) {
 
 async function convert(inputFile, outputFile, format) {
   const cadmioModule = compileModule(inputFile);
-  const solidData = convertToBlob(prepareOutput(cadmioModule.main(), {format}));
+  const solidData = convertToBlob(
+    prepareOutput(cadmioModule.main(), { format }),
+  );
   fs.writeFileSync(outputFile, solidData.asBuffer());
 }
 

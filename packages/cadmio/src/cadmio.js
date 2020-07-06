@@ -1,8 +1,8 @@
 import CSG from '@jscad/csg/api';
-import {log} from './util';
+import { log } from './util';
 
-const {color} = CSG.color;
-const {circle, square, polygon, triangle} = CSG.primitives2d;
+const { color } = CSG.color;
+const { circle, square, polygon, triangle } = CSG.primitives2d;
 const {
   cube,
   sphere,
@@ -20,7 +20,7 @@ const {
   rotateExtrude,
   rectangular_extrude,
 } = CSG.extrusions;
-const {union, difference, intersection} = CSG.booleanOps;
+const { union, difference, intersection } = CSG.booleanOps;
 const {
   translate,
   center,
@@ -75,7 +75,7 @@ const {
 //   return circle(props);
 // }
 
-export function Intersection({csgObject}) {
+export function Intersection({ csgObject }) {
   return () => intersection(csgObject);
 }
 // -> createElement(Intersection, null, createElement(Cube, {"size":3}))
@@ -111,7 +111,7 @@ function Cadmio() {
   function render(element) {
     log(`render ${element.csgRender}`);
 
-    const {csgRender, props} = element;
+    const { csgRender, props } = element;
 
     // Aggregate children props and apply render method
     const childElements = props.children || [];
@@ -122,7 +122,7 @@ function Cadmio() {
     log('rendered', renderedChildren, csgRender);
 
     // Generate and return CSG
-    const {children: _, ...propsWithoutChildren} = props;
+    const { children: _, ...propsWithoutChildren } = props;
     return csgRender({
       csgObject: renderedChildren,
       props: propsWithoutChildren,
@@ -139,9 +139,9 @@ function Cadmio() {
       .filter((c) => c != null && c !== false)
       .map((child) => createElement(child, props));
 
-    const csgFn = fn({...props});
+    const csgFn = fn({ ...props });
 
-    return {csgFn, props, children};
+    return { csgFn, props, children };
   }
 
   function finalize(fn, definitions = []) {

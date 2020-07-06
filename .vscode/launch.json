@@ -26,7 +26,7 @@
         "-o",
         "${workspaceFolder}/test.stl"
       ],
-      "env": {"DEBUG": "cadmio"},
+      "env": { "DEBUG": "cadmio" },
       "preLaunchTask": "npm: build"
     }
   ]

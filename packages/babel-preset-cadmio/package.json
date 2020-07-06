@@ -1,0 +1,40 @@
+{
+  "name": "babel-preset-cadmio",
+  "description": "Babel preset for Cadmio.",
+  "version": "0.1.0",
+  "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io/)",
+  "scripts": {
+    "build": "babel -d lib src",
+    "test": "npm run build && jest"
+  },
+  "dependencies": {
+    "@babel/helper-plugin-utils": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.5",
+    "@babel/plugin-transform-react-jsx": "^7.7.7",
+    "babel-plugin-add-module-exports": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/helper-plugin-test-runner": "^7.7.4",
+    "@babel/helper-transform-fixture-test-runner": "^7.7.5",
+    "jest": "^24.9.0"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uetchy/babel-preset-cadmio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uetchy/babel-preset-cadmio/issues"
+  },
+  "homepage": "https://github.com/uetchy/babel-preset-cadmio",
+  "keywords": [
+    "babel-preset",
+    "cadmio"
+  ],
+  "license": "MIT"
+}
