@@ -14,11 +14,11 @@
     "babel-plugin-add-module-exports": "^1.0.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.7",
-    "@babel/core": "^7.7.7",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
     "@babel/helper-plugin-test-runner": "^7.7.4",
-    "@babel/helper-transform-fixture-test-runner": "^7.7.5",
-    "jest": "^24.9.0"
+    "@babel/helper-transform-fixture-test-runner": "^7.10.5",
+    "jest": "^26.2.1"
   },
   "main": "lib/index.js",
   "files": [

@@ -4,6 +4,7 @@
   "author": "Yasuaki Uechi <y@uechi.io> (https://uechi.io)",
   "scripts": {
     "build": "lerna run build",
+    "setup": "lerna bootstrap && lerna link",
     "test": "lerna run test"
   },
   "devDependencies": {

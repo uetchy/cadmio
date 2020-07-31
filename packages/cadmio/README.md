@@ -21,24 +21,28 @@ npm install -g cadmio
 Write your 3D model and save it as `logo.jsx`.
 
 ```jsx
-import Cadmio, {Union, Difference, Intersection, Cube, Sphere} from 'cadmio';
+import Cadmio, { Union, Difference, Intersection, Cube, Sphere } from 'cadmio';
 
 const OpenJSCADLogo = (
-  <>
-    <Union>
-      <Difference>
-        <Cube size={3} center={true} />
-        <Sphere r={2} center={true} />
-      </Difference>
-      <Intersection>
-        <Sphere r={1.3} center={true} />
-        <Cube size={2.1} center={true} />
-      </Intersection>
-    </Union>
-  </>
+  <Union>
+    <Difference>
+      <Cube size={3} center={true} />
+      <Sphere r={2} center={true} />
+    </Difference>
+    <Intersection>
+      <Sphere r={1.3} center={true} />
+      <Cube size={2.1} center={true} />
+    </Intersection>
+  </Union>
 );
 
-export default Cadmio.render(OpenJSCADLogo);
+const Logo = Cadmio.create(
+  'Union',
+  Cadmio.create('Difference'),
+  Cadmio.create('Difference'),
+);
+
+export default Cadmio.render(Logo);
 ```
 
 Compile `logo.jsx` with `cadmio` command.

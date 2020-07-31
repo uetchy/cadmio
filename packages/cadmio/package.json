@@ -9,21 +9,17 @@
     "test-build": "npm run build && DEBUG=cadmio lib/cli.js tests/__fixtures__/logo.jsx -o test.stl"
   },
   "dependencies": {
-    "@babel/core": "^7.10.4",
-    "@babel/helper-plugin-utils": "^7.10.4",
-    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
-    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/core": "^7.11.0",
     "@jscad/core": "^0.4.0",
     "@jscad/csg": "^0.7.0",
-    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-preset-cadmio": "^0.1.0",
     "chalk": "^4.1.0",
     "debug": "^4.1.1",
-    "vm": "^0.1.0",
-    "yargs": "^15.4.0"
+    "yargs": "^15.4.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "jest": "^26.1.0",
+    "@babel/cli": "^7.10.5",
+    "jest": "^26.2.1",
     "shx": "^0.3.2",
     "temp-dir": "^2.0.0"
   },
