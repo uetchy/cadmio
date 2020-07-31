@@ -70,14 +70,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://uechi.io/"><img src="https://avatars0.githubusercontent.com/u/431808?v=4?s=50" width="50px;" alt=""/><br /><sub><b>uetchy</b></sub></a><br /><a href="https://github.com/uetchy/cadmio/commits?author=uetchy" title="Code">💻</a></td>
+    <td align="center"><a href="https://uechi.io/"><img src="https://avatars0.githubusercontent.com/u/431808?v=4?s=50" width="50px;" alt=""/><br /><sub><b>uetchy</b></sub></a><br /><a href="https://github.com/uetchy/cadmio/commits?author=uetchy" title="Code">💻</a> <a href="https://github.com/uetchy/cadmio/commits?author=uetchy" title="Documentation">📖</a></td>
     <td align="center"><a href="https://morimoto.io/"><img src="https://avatars3.githubusercontent.com/u/38746192?v=4?s=50" width="50px;" alt=""/><br /><sub><b>Sora Morimoto</b></sub></a><br /><a href="https://github.com/uetchy/cadmio/commits?author=smorimoto" title="Code">💻</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
